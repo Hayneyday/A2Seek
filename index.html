@@ -176,67 +176,124 @@ Extensive experiments demonstrate that A2Seek-R1 achieves up to a 22.04\% improv
 
 
   
-<!-- Motivation 版块 -->
+<!-- Section 1: Overview of the A2Seek Benchmark -->
 <section class="section">
-  <div class="container">
-    <!-- 大标题 -->
-    <h1 class="title">Motivation</h1>
-
-    <!-- 文本内容 -->
-    <div class="content">
-      <p>
-        Chain-of-thought reasoning has significantly improved the performance of Large Language Models (LLMs) across various domains. This reasoning paradigm is also employed by state-of-the-art VLMs, which first extracts relevant cues from multimodal inputs, and then perform reasoning purely in the textual format. Despite their success, this prevailing textual reasoning paradigm faces an inherent limitation: the lack of direct interaction with visual inputs –– such as drawing lines/marks, highlighting regions, or zooming in –– hinders the model’s ability to capture fine-grained visual details, including tiny objects, subtle spatial relationships, small embedded text, and nuanced actions in videos. These limitations lead us to pose a question:
-      </p>
-      <p>
-        <strong>Can VLMs perform reasoning steps more directly within the visual modality itself, leveraging computational visual manipulations as actions to guide reasoning?</strong>
-      </p>
-      <p>
-        We introduce the concept of <em>pixel-space reasoning</em>, a novel paradigm where reasoning is not exclusively confined to verbalized format but actively incorporates operations applied directly to the visual inputs. These visual operations serve as integral steps within its reasoning chain, empowering the model to inspect, interrogate, and infer from visual evidence with enhanced fidelity.
-      </p>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <h2 class="title is-3 has-text-centered">Overview of the A2Seek Benchmark</h2>
+        <div class="content has-text-justified">
+          <p><strong>(a)</strong> Challenges in aerial anomaly detection: Traditional methods rely on static surveillance views and focus mainly on classification, making it difficult to answer “Where” and “Why” anomalies occur under dynamic UAV perspectives.</p>
+          <p><strong>(b)</strong> Dataset statistics on multiple dimensions.</p>
+          <p><strong>(c)</strong> Reasoning pipeline: The method consists of two stages—SFT (supervised fine-tuning) for reasoning activation, and RL (reinforcement learning) for dynamic reasoning.</p>
+          <p><strong>(d)</strong> High-frequency words of the dataset.</p>
+          <p><strong>(e)</strong> Reasoning process: The framework integrates multiple reasoning stages (Trigger, Diagnose, Reasoning, Reflection, Seeking), emphasizing reasoning-driven anomaly understanding.</p>
+          <p><strong>(f)</strong> Performance comparison.</p>
+        </div>
+        <div class="columns is-centered mt-4 mb-4">
+          <div class="column is-10">
+            <figure class="image">
+              <img src="static/images/carousel1.png" alt="Overview of the A2Seek Benchmark">
+              <figcaption class="has-text-centered">(a–f) Overview of the A2Seek Benchmark.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- 大图 + 图注 -->
-    <figure class="image is-16by9">
-      <img src="static/images/pixel_reasoner_illustration.png" alt="Illustration of Pixel-Space Reasoning">
-      <figcaption class="has-text-centered is-italic">
-        Illustration of Pixel-Space Reasoning
-      </figcaption>
-    </figure>
   </div>
 </section>
 
-<!-- A2Seek Overview 版块 -->
+<!-- Section 2: Scene Diversity and Complexity -->
 <section class="section">
-  <div class="container">
-    <!-- 小标题 -->
-    <h2 class="title is-4">Overview of the A2Seek Benchmark</h2>
-
-    <!-- 大图 -->
-    <figure class="image">
-      <img src="static/images/carousel1.png" alt="Overview of the A2Seek Benchmark.">
-    </figure>
-
-    <!-- 各分项注释 -->
-    <div class="content">
-      <p><strong>(a)</strong> Challenges in aerial anomaly detection. Traditional methods rely on static surveillance views and focus mainly on classification, making it difficult to answer “Where” and “Why” anomalies occur under dynamic UAV perspectives.</p>
-      <p><strong>(b)</strong> Dataset statistics on multiple dimensions.</p>
-      <p><strong>(c)</strong> Reasoning pipeline: supervised fine-tuning (SFT) + reinforcement learning (RL).</p>
-      <p><strong>(d)</strong> High-frequency word of dataset.</p>
-      <p><strong>(e)</strong> Multi-stage reasoning: Trigger, Diagnose, Reasoning, Reflection, Seeking.</p>
-      <p><strong>(f)</strong> Performance comparison.</p>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <h2 class="title is-3 has-text-centered">Scene Diversity and Complexity</h2>
+        <div class="content has-text-justified">
+          <p>Left: fixed-view surveillance datasets. Right: diverse aerial views in A2Seek.</p>
+        </div>
+        <div class="columns is-centered mt-4 mb-4">
+          <div class="column is-10">
+            <figure class="image">
+              <img src="static/images/carousel2.png" alt="Comparison of scene diversity and complexity">
+              <figcaption class="has-text-centered">Fixed-view vs. aerial-view scene diversity.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- 另一个分区：Scene Diversity -->
-    <h2 class="title is-4">Scene Diversity and Complexity</h2>
-    <figure class="image">
-      <img src="static/images/carousel2.png" alt="Comparison of scene diversity and complexity.">
-    </figure>
-    <p class="has-text-centered">
-      Left: fixed-view surveillance datasets.  
-      Right: diverse aerial views in A2Seek.
-    </p>
   </div>
 </section>
+
+<!-- Section 3: Qualitative Results of A2Seek-R1 -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <h2 class="title is-3 has-text-centered">Qualitative Results of A2Seek-R1</h2>
+        <div class="content has-text-justified">
+          <p>Beyond predicting anomaly categories, our method provides reasoning traces and accurately localizes the key regions that support its judgment.</p>
+        </div>
+        <div class="columns is-centered mt-4 mb-4">
+          <div class="column is-10">
+            <figure class="image">
+              <img src="static/images/carousel3.png" alt="Qualitative results of A2Seek-R1">
+              <figcaption class="has-text-centered">Qualitative examples from A2Seek-R1.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Representative Anomaly Types -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <h2 class="title is-3 has-text-centered">Representative Anomaly Types</h2>
+        <div class="content has-text-justified">
+          <p>Our dataset covers a broad spectrum of anomalous behaviors across different risk levels, highlighting the diversity and complexity of aerial anomaly detection.</p>
+        </div>
+        <div class="columns is-centered mt-4 mb-4">
+          <div class="column is-10">
+            <figure class="image">
+              <img src="static/images/carousel4.png" alt="Representative anomaly types in the A2Seek dataset">
+              <figcaption class="has-text-centered">典型异常类型示例。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: Four-Stage Annotation Workflow -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <h2 class="title is-3 has-text-centered">Four-Stage Annotation Workflow</h2>
+        <div class="content has-text-justified">
+          <p><em>Step 1</em> (blue): Temporal annotators mark the start/end frames and class of every anomalous episode, exporting a JSON timeline.</p>
+          <p><em>Step 2</em> (salmon): For the first frame of each event, experts draw a bounding box around the anomalous region and supply a natural-language description.</p>
+          <p><em>Step 3</em> (green): A pretrained tracker propagates each seed through the clip; an automated checker screens and funnels approved tracks into the spatial-label repository.</p>
+          <p><em>Step 4</em> (violet): Vision-language models ingest temporal tags, spatial tracks, and human captions; via chain-of-thought reasoning, they merge these cues into consolidated frame-level annotations.</p>
+        </div>
+        <div class="columns is-centered mt-4 mb-4">
+          <div class="column is-10">
+            <figure class="image">
+              <img src="static/images/carousel5.png" alt="Four–stage annotation workflow">
+              <figcaption class="has-text-centered">四阶段标注流程示意图。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
