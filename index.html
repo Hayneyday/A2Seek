@@ -175,136 +175,83 @@ Extensive experiments demonstrate that A2Seek-R1 achieves up to a 22.04\% improv
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.png" alt="Overview of the A2Seek Benchmark."/>
-        <h2 class="subtitle has-text-centered">
-          \textbf{(a)} Challenges in aerial anomaly detection. Traditional methods rely on static surveillance views and focus mainly on classification, making it difficult to answer ``Where'' and ``Why'' anomalies occur under dynamic UAV perspectives. \textbf{(b)} Dataset statistics on multiple dimensions. \textbf{(c)} Reasoning pipeline. The method consists of two stages: SFT (supervised fine-tuning) for reasoning activation, and RL (reinforcement learning) for dynamic reasoning. \textbf{(d)} High-frequency word of dataset. \textbf{(e)} Reasoning process. The framework integrates multiple reasoning stages (Trigger, Diagnose, Reasoning, Reflection and Seeking), emphasizing reasoning-driven anomaly understanding. \textbf{(f)} Performance comparison.
-        </h2>
+  
+<!-- Static image + caption grid -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+
+      <!-- (a) Overview of the A2Seek Benchmark -->
+      <div class="column is-half">
+        <figure class="image is-4by3">
+          <img src="static/images/carousel1.png" alt="Overview of the A2Seek Benchmark.">
+        </figure>
+        <div class="content has-text-centered">
+          <p><strong>(a)</strong> Challenges in aerial anomaly detection. Traditional methods rely on static surveillance views and focus mainly on classification, making it difficult to answer “Where” and “Why” anomalies occur under dynamic UAV perspectives.</p>
+          <p><strong>(b)</strong> Dataset statistics on multiple dimensions.</p>
+          <p><strong>(c)</strong> Reasoning pipeline: supervised fine-tuning (SFT) + reinforcement learning (RL).</p>
+          <p><strong>(d)</strong> High-frequency word of dataset.</p>
+          <p><strong>(e)</strong> Multi-stage reasoning: Trigger, Diagnose, Reasoning, Reflection, Seeking.</p>
+          <p><strong>(f)</strong> Performance comparison.</p>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.png" alt="Comparison of scene diversity and complexity."/>
-        <h2 class="subtitle has-text-centered">
-          Left: fixed-view surveillance datasets. Right: diverse aerial views in A2Seek.
-        </h2>
+
+      <!-- Comparison of scene diversity and complexity -->
+      <div class="column is-half">
+        <figure class="image is-4by3">
+          <img src="static/images/carousel2.png" alt="Comparison of scene diversity and complexity.">
+        </figure>
+        <p class="subtitle has-text-centered">
+          Left: fixed-view surveillance datasets.  
+          Right: diverse aerial views in A2Seek.
+        </p>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.png" alt="Qualitative results of A2Seek-R1"/>
-        <h2 class="subtitle has-text-centered">
+
+      <!-- Qualitative results of A2Seek-R1 -->
+      <div class="column is-half">
+        <figure class="image is-4by3">
+          <img src="static/images/carousel3.png" alt="Qualitative results of A2Seek-R1">
+        </figure>
+        <p class="subtitle has-text-centered">
           Beyond predicting anomaly categories, our method provides reasoning traces and accurately localizes the key regions that support its judgment.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.png" alt="Representative anomaly types in the A2Seek dataset"/>
-      <h2 class="subtitle has-text-centered">
-        Our dataset covers a broad spectrum of anomalous behaviors across different risk levels, highlighting the diversity and complexity of aerial anomaly detection.
-      </h2>
-    </div>
-    <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel5.png" alt="Four–stage annotation workflow"/>
-      <h2 class="subtitle has-text-centered">
-        \emph{Step 1} (blue) Temporal annotators use our in-house GUI to mark the start/end frames and class of every anomalous episode, exporting a JSON timeline.
-        \emph{Step 2} (salmon) For the first frame of each event, experts draw a bounding box around the anomalous region and supply a natural-language description, yielding single-frame spatial seeds.
-        \emph{Step 3} (green) A pretrained tracker propagates each seed through the clip to form full-length trajectories; an automated checker screens the results, triggers relabelling when necessary, and funnels all approved tracks into the spatial-label repository.
-        \emph{Step 4} (violet) Vision-language models (VLMs) ingest the temporal tags, spatial tracks, and human captions; via chain-of-thought reasoning, they merge these cues into consolidated frame-level annotations, producing the final per-video spatial label set.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+        </p>
+      </div>
 
+      <!-- Representative anomaly types -->
+      <div class="column is-half">
+        <figure class="image is-4by3">
+          <img src="static/images/carousel4.png" alt="Representative anomaly types in the A2Seek dataset">
+        </figure>
+        <p class="subtitle has-text-centered">
+          Our dataset covers a broad spectrum of anomalous behaviors across different risk levels, highlighting the diversity and complexity of aerial anomaly detection.
+        </p>
+      </div>
 
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+      <!-- Four-stage annotation workflow -->
+      <div class="column is-half">
+        <figure class="image is-4by3">
+          <img src="static/images/carousel5.png" alt="Four–stage annotation workflow">
+        </figure>
+        <div class="content has-text-centered">
+          <p><em>Step 1</em> (blue) Temporal annotators mark start/end frames and class, exporting a JSON timeline.</p>
+          <p><em>Step 2</em> (salmon) Experts draw a bounding box on the first frame of each event with a natural-language description.</p>
+          <p><em>Step 3</em> (green) A tracker propagates seeds through the clip; an automated checker triggers relabelling if needed.</p>
+          <p><em>Step 4</em> (violet) Vision-language models merge temporal tags, spatial tracks, and captions into final frame-level annotations.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
-<!-- End youtube video -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <h2 class="title">If you find our work useful, please give us a free cite:</h2>
+      <pre><code>Wait for acceptance</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
